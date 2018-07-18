@@ -1,75 +1,78 @@
 @import "_variables";
+$width: 300px;
+$offset-left: 15px;
+
 
 .main {
   background-color: black;
 }
 @keyframes slide-text-one {
   0% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   21% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   33.3333% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   87.6667% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   100% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
 }
 @keyframes slide-text-two {
   0% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   21% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   33.3333% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   54.3333% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   66.6667% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   100% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
 }
 @keyframes slide-text-three {
   0% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   54.3333% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
   66.6667% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   87.6667% {
-    left: 7px;
+    left: $offset-left;
     opacity: 1;
   }
   100% {
-    left: -200px;
+    left: $width * (-1);
     opacity: 0;
   }
 }
@@ -79,10 +82,10 @@
   position: relative;
   text-decoration: none;
   &-wrapper {
-    width: 200px;
-    height: 200px;
+    width: $width;
+    height: 250px;
     overflow: hidden;
-    background: center calc(50% + 2px) no-repeat url('../img/background-200-200.png') $yellow;
+    background: center calc(50% + 2px) no-repeat url('../img/background-300-250.png') $yellow;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -91,32 +94,39 @@
     .svg {
       &-donut {
         position: absolute;
-        bottom: -20px;
-        right: 34px;
+        bottom: -23px;
+        right: 49px;
       }
       &-triangle {
-        &-white, &-black {
+        &-white {
           &-group {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            width: 35px;
-            height: 6px;
-            margin: 0px auto auto 25px;
+            width: 60px;
+            height: 16px;
+            margin: -1px auto auto 30px;
           }
           width: auto;
           height: 100%;
         }
         &-black {
+          display: block;
           &-group {
-            margin: 10px 80px auto auto;
+            width: 8px;
+            position: absolute;
+            top: 72px;
+            right: 81px;
+          }
+          &:nth-child(2) {
+            margin: 2px 0;
           }
         }
       }
     }
   }
   &-button {
-    width: 148px;
+    width: 177px;
     height: 38px;
     line-height: 38px;
     font-size: 12px;
@@ -124,40 +134,40 @@
     background-color: #000;
     font-weight: 700;
     border-radius: 19px;
-    margin: 128px auto auto 7px;
+    margin: 144px auto auto $offset-left;
     color: #fff;
     letter-spacing: 0.5px;
   }
   &-text {
     color: #000;
     position: absolute;
-    left: 7px;
-    top: 15px;
+    left: $offset-left;
+    top: 27px;
     padding: 0;
     margin: 0;
-    font-size: 22px;
+    font-size: 25px;
+    line-height: 25px;
     font-weight: 300;
-    line-height: 22px;
     strong {
-      font-weight: 800;
+      font-weight: 900;
     }
     &.step-one {
-      font-size: 19px;
-      line-height: 19px;
-      top: 20px;
+      letter-spacing: unset;
       animation: slide-text-one 8.1s ease-in-out 0s infinite normal;
     }
     &.step-two {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 20px;
+      line-height: 20px;
       strong {
         font-weight: 900;
-        line-height: 38px;
-        font-size: 24px;
+        line-height: 35px;
+        font-size: 41px;
       }
       animation: slide-text-two 8.1s ease-in-out 0s infinite normal;
     }
     &.step-three {
+      font-size: 29px;
+      line-height: 20px;
       animation: slide-text-three 8.1s ease-in-out 0s infinite normal;
     }
   }
