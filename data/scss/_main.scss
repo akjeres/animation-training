@@ -1,0 +1,164 @@
+@import "_variables";
+
+.main {
+  background-color: black;
+}
+@keyframes slide-text-one {
+  0% {
+    left: 7px;
+    opacity: 1;
+  }
+  21% {
+    left: 7px;
+    opacity: 1;
+  }
+  33.3333% {
+    left: -200px;
+    opacity: 0;
+  }
+  87.6667% {
+    left: -200px;
+    opacity: 0;
+  }
+  100% {
+    left: 7px;
+    opacity: 1;
+  }
+}
+@keyframes slide-text-two {
+  0% {
+    left: -200px;
+    opacity: 0;
+  }
+  21% {
+    left: -200px;
+    opacity: 0;
+  }
+  33.3333% {
+    left: 7px;
+    opacity: 1;
+  }
+  54.3333% {
+    left: 7px;
+    opacity: 1;
+  }
+  66.6667% {
+    left: -200px;
+    opacity: 0;
+  }
+  100% {
+    left: -200px;
+    opacity: 0;
+  }
+}
+@keyframes slide-text-three {
+  0% {
+    left: -200px;
+    opacity: 0;
+  }
+  54.3333% {
+    left: -200px;
+    opacity: 0;
+  }
+  66.6667% {
+    left: 7px;
+    opacity: 1;
+  }
+  87.6667% {
+    left: 7px;
+    opacity: 1;
+  }
+  100% {
+    left: -200px;
+    opacity: 0;
+  }
+}
+.banner {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  &-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: center calc(50% + 2px) no-repeat url('../img/background-200-200.png') $yellow;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-family: 'Montserrat', sans-serif;
+    .svg {
+      &-donut {
+        position: absolute;
+        bottom: -20px;
+        right: 34px;
+      }
+      &-triangle {
+        &-white, &-black {
+          &-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 35px;
+            height: 6px;
+            margin: 0px auto auto 25px;
+          }
+          width: auto;
+          height: 100%;
+        }
+        &-black {
+          &-group {
+            margin: 10px 80px auto auto;
+          }
+        }
+      }
+    }
+  }
+  &-button {
+    width: 148px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #000;
+    font-weight: 700;
+    border-radius: 19px;
+    margin: 128px auto auto 7px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  &-text {
+    color: #000;
+    position: absolute;
+    left: 7px;
+    top: 15px;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 22px;
+    strong {
+      font-weight: 800;
+    }
+    &.step-one {
+      font-size: 19px;
+      line-height: 19px;
+      top: 20px;
+      animation: slide-text-one 8.1s ease-in-out 0s infinite normal;
+    }
+    &.step-two {
+      font-size: 16px;
+      line-height: 16px;
+      strong {
+        font-weight: 900;
+        line-height: 38px;
+        font-size: 24px;
+      }
+      animation: slide-text-two 8.1s ease-in-out 0s infinite normal;
+    }
+    &.step-three {
+      animation: slide-text-three 8.1s ease-in-out 0s infinite normal;
+    }
+  }
+}
